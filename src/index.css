@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+
+  *{
+  font-family: "IBM Plex Sans", sans-serif;
+  font-optical-sizing: auto;
+ 
+  font-style: normal;
+
+}
+
+
+.header-banner {
+  background-image: url('https://i.ibb.co.com/GQBMc61t/featured-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px; /* adjust as needed */
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+  color: #d8b98c; /* golden text */
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+} 
+
+
+
+/* From Uiverse.io by Madflows */ 
+
+
+
+

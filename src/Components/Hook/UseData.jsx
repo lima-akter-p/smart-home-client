@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const UseData = () => {
-  const [user,setUser] = useState(null);
+  
 
    const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,7 +25,7 @@ const UseData = () => {
     fetchData();
   }, []);
 
-  return {data, loading, error, setUser,setLoading,user};
+  return {data, loading, error,setLoading};
 };
 
 

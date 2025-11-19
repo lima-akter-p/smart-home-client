@@ -12,6 +12,7 @@ const MyProperties = () => {
   // const gotoDetails = () =>{
   //   navigate("/view-details");
   // };
+  console.log(myProperties)
 
   useEffect(() => {
     if (user?.email) {
@@ -60,6 +61,7 @@ const MyProperties = () => {
     });
 
   }
+  
   return (
     <div>
       <h1>my properties :{myProperties.length}</h1>

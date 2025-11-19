@@ -4,12 +4,12 @@ import { AuthContex } from '../Provider/AuthContext';
 import Loading from '../../Pages/Loading/Loading';
 
 const PrivateRoute = ({ children }) => {
-  const { user, loading } = useContext(AuthContex);
+  const { user, userLoading } = useContext(AuthContex);
   //  console.log(user)
   const location = useLocation();
   console.log(location)
 
-  if (loading) {
+  if (userLoading) {
     return <Loading></Loading>
   }
 
@@ -26,4 +26,5 @@ const PrivateRoute = ({ children }) => {
 };
 
 export default PrivateRoute;
+
 

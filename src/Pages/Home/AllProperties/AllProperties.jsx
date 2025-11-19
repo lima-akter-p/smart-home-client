@@ -8,6 +8,7 @@ import Property from '../../../Components/Property/Property';
 
 const AllProperties = () => {
     const [properties, setProperties] = useState([])
+    console.log(properties)
     useEffect(() => {
         fetch('http://localhost:3000/properties')
             .then(res => res.json())

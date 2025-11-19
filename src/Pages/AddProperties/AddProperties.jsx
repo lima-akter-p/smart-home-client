@@ -11,7 +11,7 @@ const AddProperties = () => {
   const handleAddProperty = async (e) => {
     e.preventDefault();
     const form = e.target;
-    form.reset();
+   
 
     const property = {
       propertyName: form.propertyName.value,
@@ -39,6 +39,7 @@ const AddProperties = () => {
         });
       }
     })
+     form.reset();
 
 
 

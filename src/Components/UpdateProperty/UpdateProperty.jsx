@@ -47,6 +47,8 @@ const UpdateProperty = () => {
             navigate("/my-properties")
         }
       });
+      form.reset();
+
   };
 
   return (

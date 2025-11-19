@@ -3,15 +3,12 @@ import React, { use, useEffect, useState, } from 'react';
 import { AuthContex } from '../../Components/Provider/AuthContext';
 import { Link, NavLink } from 'react-router';
 import Swal from 'sweetalert2';
-// import { useNavigate } from 'react-router';
+
 
 const MyProperties = () => {
   const { user } = use(AuthContex);
   const [myProperties, setMyProperties] = useState([])
-  // const navigate = useNavigate();
-  // const gotoDetails = () =>{
-  //   navigate("/view-details");
-  // };
+
   console.log(myProperties)
 
   useEffect(() => {

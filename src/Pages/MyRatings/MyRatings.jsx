@@ -1,93 +1,52 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContex } from '../../Components/Provider/AuthContext';
-import axios from 'axios';
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContex } from "../../Components/Provider/AuthContext";
+import axios from "axios";
 
 const MyRatings = () => {
   const { user } = useContext(AuthContex);
- 
-  
 
   const [myRatings, setMyRatings] = useState([]);
-  console.log(myRatings)
-
+  
 
   useEffect(() => {
-    axios.get(`http:localhost/3000/myRatings?email=${user.email}`).then(res =>{
-        setMyRatings(res.data)
-    })
+    if (!user) return;
+    axios
+      .get(`http://localhost:3000/myRatings?email=${user.email}`)
+      .then((res) => {
+        setMyRatings(res.data);
+      });
   }, [user]);
 
   return (
-     <div className='border rounded-2xl p-4 shadow-md bg-white justify-around flex gap-4'>
-            {/* property thumbnail */}
+    <div className="grid grid-cols-3 gap-3">
+      {myRatings.map((myRating) => (
+        <div key={myRating._id} className="max-w-md mt-10  shadow-md rounded-xl overflow-hidden border dark:bg-gray-800 dark:text-white">
+          <img
+            src={myRating.image}
+            alt="Property Thumbnail"
+            className="w-full h-48 object-cover"
+          />
 
-            <img className='w-32 h-24 object-cover rounded-xl' src="" alt=""/>
+          <div className="p-5 space-y-3">
+            <h2 className="text-xl font-bold">{myRating.propertyName}</h2>
 
-            <h2 className='text-xl font-semibold'>name</h2>
+            <div className="flex justify-between text-sm opacity-70">
+              <span>
+                By: <strong>{myRating.userName}</strong>
+              </span>
+              <span>Date:{myRating.postedDate}</span>
+            </div>
 
-            <p className='text-gray-600 text-sm'>reviewer name</p>
-            <p className='text-xt font:bold'>Rating</p>
-            <p className='text-xt font:bold'>Review</p>
-             
-            <p className='text-gray-500 text-sm mt1'>Review Date</p>
+            <div className="flex text-yellow-500 text-lg">{myRating.Rating}</div>
 
+            <p className="text-sm opacity-90">{myRating.description}</p>
+          </div>
         </div>
- 
+      ))}
+    </div>
   );
 };
 
 export default MyRatings;
 
 
-
-
-
-
-
-
-
-
-
-
-
-// 
-// import React, { use, useEffect, useState } from 'react';
-// import { AuthContex } from '../../Components/Provider/AuthContext';
-
-// const MyRatings = () => {
-//      const { user } = use(AuthContex);
-//     const[myProperties,setMyProperties] = useState([])
-//     console.log(myProperties)
-    
-
-//       useEffect(() => {
-//         if (user?.name) {
-//           fetch(`http://localhost:3000/RatingProperty?name=${user.name}`)
-//             .then(res => res.json())
-//             .then(data => {
-//               console.log(data)
-//               setMyProperties(data)
-//             })
-//         }
-    
-//       }, [user?.name])
-//     return (
-        // <div className='border rounded-2xl p-4 shadow-md bg-white justify-around flex gap-4'>
-        //     {/* property thumbnail */}
-
-        //     <img className='w-32 h-24 object-cover rounded-xl' src="" alt=""/>
-
-        //     <h2 className='text-xl font-semibold'>{}</h2>
-
-        //     <p className='text-gray-600 text-sm'>reviewer name</p>
-        //     <p className='text-xt font:bold'>Rating</p>
-        //     <p className='text-xt font:bold'>Review</p>
-             
-        //     <p className='text-gray-500 text-sm mt1'>Review Date</p>
-
-        // </div>
-      
-//     )  
-// };
-
-// export default MyRatings;

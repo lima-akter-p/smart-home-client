@@ -53,7 +53,7 @@ const UpdateProperty = () => {
 
   return (
     <div className="flex justify-center py-10 px-4">
-      <div className="w-full max-w-3xl bg-white shadow-xl rounded-xl p-8">
+      <div className="w-full max-w-3xl  shadow-xl rounded-xl p-8">
         <button className="text-sm text-gray-500 mb-3 hover:underline">
           ← Back to Properties
         </button>
@@ -132,14 +132,14 @@ const UpdateProperty = () => {
               type="email"
               value={user?.email}
               readOnly
-              className="border p-3 rounded-md w-full bg-gray-100"
+              className="border p-3 rounded-md w-full bg--100"
             />
 
             <input
               type="text"
               value={user?.displayName}
               readOnly
-              className="border p-3 rounded-md w-full bg-gray-100"
+              className="border p-3 rounded-md w-full bg--100"
             />
           </div>
 

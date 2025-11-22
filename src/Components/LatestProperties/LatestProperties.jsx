@@ -3,7 +3,7 @@ import Property from '../Property/Property';
 
 const LatestProperties = ({ latestPropertiesPromise }) => {
     const properties = use(latestPropertiesPromise);
-    console.log(properties);
+  
 
     return (
         <div className='mt-20'>

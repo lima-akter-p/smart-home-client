@@ -1,3 +1,26 @@
+:root{
+  --body-background:white;
+  --title:black;
+  --primary:blue;
+}
+[data-theme='light']{
+    --body-background:white;
+  --title:black;
+  --primary:blue;
+
+
+}
+[data-theme='dark']{
+    --body-background:rgb(100,100,100);
+  --title:black;
+  --primary:violet;
+
+
+}
+
+
+
+
 @import "tailwindcss";
 
 @plugin "daisyui";
@@ -45,6 +68,8 @@
     transform: scaleX(1);
   }
 } 
+
+
 
 
 

@@ -1,19 +1,26 @@
-import { useContext, useState } from "react";
-import { useLocation } from "react-router";
+import { useContext, useEffect, useState } from "react";
+import {  useParams } from "react-router";
 import { AuthContex } from "../Components/Provider/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 const ViewDetails = () => {
-  const[loading,setLoading] = useState(false)
-  const { state } = useLocation();
-  const { property } = state;
-
-  // From add property
   const { user } = useContext(AuthContex);
-  if(loading) return <span>loading....</span>
-  const handleAddRating =  (e) => {
-    setLoading(true)
+  const { id } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [property, setProperty] = useState(null);
+
+  useEffect(() => {
+    axios.get(`http://localhost:3000/properties/${id}`).then((res) => {
+      setProperty(res.data);
+      setLoading(false);
+    });
+  }, [id]);
+
+  if (loading) return <span>loading....</span>;
+
+  const handleAddRating = (e) => {
+    setLoading(true);
     e.preventDefault();
     const form = e.target;
 
@@ -22,17 +29,15 @@ const ViewDetails = () => {
       description: form.description.value,
       image: property.image,
       Rating: form.Rating.value,
-      postedDate:new Date().toISOString() ,
+      postedDate: new Date().toISOString(),
       userName: user?.displayName,
-      userEmail:user?.email
+      userEmail: user?.email,
     };
 
-    
+   
 
-    console.log(newRating);
-
-    axios.post("http://localhost:3000/RatingProperty", property).then((res) => {
-      setLoading(false)
+    axios.post("http://localhost:3000/RatingProperty", newRating).then((res) => {
+      setLoading(false);
       if (res.data.insertedId) {
         Swal.fire({
           title: "Insert success!",
@@ -43,7 +48,6 @@ const ViewDetails = () => {
     });
     form.reset();
   };
-  
 
   return (
     <div>
@@ -65,7 +69,7 @@ const ViewDetails = () => {
         {/* Content Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Left Column */}
-          <div className="md:col-span-2 space-y-6">
+          <div className=" md:col-span-2 space-y-6">
             {/* Price + Category */}
             <div className="flex items-center gap-4">
               <span className="text-3xl font-bold text-violet-900">
@@ -122,7 +126,7 @@ const ViewDetails = () => {
 
       <section>
         <div className="flex justify-center py-10 px-4">
-          <div className="w-full max-w-3xl bg-white shadow-xl rounded-xl p-8">
+          <div className="w-full max-w-3xl  shadow-xl rounded-xl p-8">
             <button className="text-sm text-gray-500 mb-3 hover:underline">
               ← Back to Properties
             </button>
@@ -134,7 +138,6 @@ const ViewDetails = () => {
             <form onSubmit={handleAddRating} className="space-y-5">
               {/* Property Name + Category */}
               <div className="grid  gap-5">
-                
                 <input
                   type="number"
                   name="Rating"
@@ -152,9 +155,6 @@ const ViewDetails = () => {
                   className="border p-3 rounded-md w-full h-28"
                   required
                 ></textarea>
-
-                
-            
               </div>
 
               <button

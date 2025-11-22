@@ -28,7 +28,7 @@ const AddProperties = () => {
     
     };
     
-    console.log(property)
+   
     axios.post('http://localhost:3000/newProperty', property).then(res => {
 
       if (res.data.insertedId) {
@@ -46,8 +46,8 @@ const AddProperties = () => {
   };
 
   return (
-    <div className="flex justify-center py-10 px-4">
-      <div className="w-full max-w-3xl bg-white shadow-xl rounded-xl p-8">
+    <div className="flex justify-center  py-10 px-4">
+      <div className="w-full max-w-3xl  shadow-xl rounded-xl p-8">
 
         <button className="text-sm text-gray-500 mb-3 hover:underline">
           ← Back to Properties
@@ -65,7 +65,7 @@ const AddProperties = () => {
               type="text"
               name="propertyName"
               placeholder="Property Name"
-              className="border p-3 rounded-md w-full"
+              className="border p-3  rounded-md w-full "
               required
             />
 
@@ -128,14 +128,14 @@ const AddProperties = () => {
               type="email"
               value={user?.email}
               readOnly
-              className="border p-3 rounded-md w-full bg-gray-100"
+              className="border p-3 rounded-md w-full "
             />
 
             <input
               type="text"
               value={user?.displayName}
               readOnly
-              className="border p-3 rounded-md w-full bg-gray-100"
+              className="border p-3 rounded-md w-full"
             />
           </div>
 

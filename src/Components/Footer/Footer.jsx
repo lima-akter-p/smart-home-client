@@ -5,11 +5,11 @@ import logo from '../../assets/logo.png'
 const Footer = () => {
     return (
         <footer className="bg-gray-900 text-gray-300 pt-12 pb-8 mt-20">
-            <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
 
                 {/* Logo + About */}
                 <div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 justify-center md:justify-start">
                         <img
                             src={logo}
                             alt="HomeNest Logo"
@@ -53,7 +53,7 @@ const Footer = () => {
                     </ul>
 
                     {/* Social Media */}
-                    <div className="flex items-center gap-4 mt-5 text-xl">
+                    <div className="flex items-center gap-4 mt-5 text-xl justify-center md:justify-start">
                         <a href="https://www.facebook.com/lima.akther.284949" className="hover:text-white transition-colors">
                             <FaFacebook />
                         </a>
@@ -75,8 +75,8 @@ const Footer = () => {
                 © {new Date().getFullYear()} HomeNest — All Rights Reserved.
             </div>
         </footer>
-
     );
 };
 
 export default Footer;
+

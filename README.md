@@ -24,7 +24,7 @@ Node.js ,
 
 MongoDB , Firebase ,
 
-Tailwind CSS , Bootstrap 
+Tailwind CSS 
 
 ⭐ Core Features
 
@@ -69,7 +69,7 @@ dotenv
 3️⃣ Install dependencies
   npm install
 
-4️⃣
+4️⃣ Create a .env file
 - VITE_API_KEY=
 - DATABASE_URL=
 - JWT_SECRET=

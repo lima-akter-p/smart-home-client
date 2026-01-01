@@ -58,6 +58,8 @@ dotenv
 
 
 🧭 How to Run the Project Locally
+
+
 1️⃣ Clone the repository
 
 
@@ -65,9 +67,9 @@ dotenv
 
 
 3️⃣ Install dependencies
-npm install
+  npm install
 
-4️⃣ 
+4️⃣
 - VITE_API_KEY=
 - DATABASE_URL=
 - JWT_SECRET=

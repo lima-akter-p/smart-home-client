@@ -1,3 +1,4 @@
+<img width="1760" height="956" alt="Screenshot 2025-12-31 164653" src="https://github.com/user-attachments/assets/5ce6386f-bcf6-4ecc-af2b-f2a5b6fa86f7" />
 # HomeNest
 
 🚀 Project Overview

@@ -1,16 +1,88 @@
-# React + Vite
+# HomeNest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Project Overview
 
-Currently, two official plugins are available:
+HomeNest connects property owners with buyers and renters through a simple and user-friendly interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The platform allows:
 
-## React Compiler
+- Owners to list properties for rent or sale
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Users to search and filter properties based on preferences
 
-## Expanding the ESLint configuration
+- Detailed property information for better decision-making
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Technologies Used:
+
+
+
+HTML, CSS, JavaScript,
+
+React, 
+
+Node.js ,
+
+MongoDB , Firebase ,
+
+Tailwind CSS , Bootstrap 
+
+⭐ Core Features
+
+🏘 Add rental and sale property listings
+
+🔍 Search properties by location
+
+💰 Filter by price range
+
+🏷 Filter by property type (house, flat, land, etc.)
+
+📄 View detailed property information
+
+🖼 Property images support
+
+👤 Owner dashboard for managing listings
+
+📱 Responsive design for mobile and desktop
+
+📦 Dependencies 
+react,
+react-router,
+axios,
+tailwindcss,
+firebase,
+express,
+mongoose,
+dotenv
+
+
+
+
+🧭 How to Run the Project Locally
+1️⃣ Clone the repository
+
+
+2️⃣ Go to the project folder
+
+
+3️⃣ Install dependencies
+npm install
+
+4️⃣ 
+- VITE_API_KEY=
+- DATABASE_URL=
+- JWT_SECRET=
+
+5️⃣ Start development server
+npm run dev
+
+
+👉 Open in browser:
+
+
+
+🌍 Live Project Links
+
+🔗 Live Website: smart-home1-web-ed452.web.app
+
+
+

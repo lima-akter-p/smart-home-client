@@ -29,7 +29,7 @@ const AddProperties = () => {
     };
     
    
-    axios.post('http://localhost:3000/newProperty', property).then(res => {
+    axios.post('https://smart-home-api-server.vercel.app/newProperty', property).then(res => {
 
       if (res.data.insertedId) {
         Swal.fire({

@@ -11,14 +11,14 @@ const MyRatings = () => {
   useEffect(() => {
     if (!user) return;
     axios
-      .get(`http://localhost:3000/myRatings?email=${user.email}`)
+      .get(`https://smart-home-api-server.vercel.app/myRatings?email=${user.email}`)
       .then((res) => {
         setMyRatings(res.data);
       });
   }, [user]);
 
   return (
-    <div className="grid grid-cols-3 gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
       {myRatings.map((myRating) => (
         <div key={myRating._id} className="max-w-md mt-10  shadow-md rounded-xl overflow-hidden border dark:bg-gray-800 dark:text-white">
           <img

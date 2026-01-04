@@ -14,6 +14,11 @@ import PrivateRoute from "./PrivateRoute";
 import ViewDetails from "../../Pages/ViewDetails";
 import UpdateProperty from "../UpdateProperty/UpdateProperty";
 import NotFound from "../../Pages/NotFound";
+import AboutUs from "../AboutUs";
+import ContactUs from "../ContacUs";
+import TermsPrivacy from "../Terms";
+import DashboardLayout from "../Layout/DashboardLayout";
+
 
 export const router = createBrowserRouter([
   {
@@ -62,6 +67,11 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path:'/dashboard',
+        Component:DashboardLayout
+
+      },
       
       {
         path: "/update-property/:id",
@@ -71,8 +81,22 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path:"/about-us",
+        Component:AboutUs
+      },
+       {
+        path:"/contac-us",
+        Component:ContactUs
+      },
+      {
+        path:"/terms",
+        Component:TermsPrivacy
+      }
     ],
   },
+ 
+
   {
     path: "/*",
     element: <NotFound></NotFound>,
@@ -91,4 +115,5 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  
 ]);

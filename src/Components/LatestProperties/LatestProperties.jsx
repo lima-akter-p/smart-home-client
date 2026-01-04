@@ -6,7 +6,7 @@ const LatestProperties = ({ latestPropertiesPromise }) => {
   
 
     return (
-        <div className='mt-20'>
+        <div className='mt-20 mx-auto'>
             <div className="text-center mb-10">
                 <h2 className="text-4xl text-violet-700 font-bold inline-block relative animate-[fadeIn_1s_ease_forwards]">
                     Latest Properties

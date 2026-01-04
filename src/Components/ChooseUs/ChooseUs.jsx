@@ -2,7 +2,7 @@ import React from 'react';
 
 const ChooseUs = () => {
     return (
-        <section className="py-20 mt-10 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+        <section className="py-20 mt-25 bg-linear-to-br from-gray-900 via-gray-800 to-black text-white">
             <div className="max-w-6xl mx-auto text-center mb-16 ">
                 <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-wide">
                     Why Choose <span className="text-teal-400">Us</span>

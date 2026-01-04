@@ -40,7 +40,7 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
          const user = result.user;
-         console.log(user);
+        //  console.log(user);
         toast.success("Your login successfully");
 
        

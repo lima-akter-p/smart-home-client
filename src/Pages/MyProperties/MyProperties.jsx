@@ -7,14 +7,14 @@ const MyProperties = () => {
   const { user } = use(AuthContex);
   const [myProperties, setMyProperties] = useState([]);
 
-  console.log(myProperties);
+  // console.log(myProperties);
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/myProperties?email=${user.email}`)
+      fetch(`https://smart-home-api-server.vercel.app/myProperties?email=${user.email}`)
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           setMyProperties(data);
         });
     }
@@ -30,7 +30,7 @@ const MyProperties = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/myProperties/${_id}`, {
+        fetch(`https://smart-home-api-server.vercel.app/myProperties/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -127,13 +127,25 @@ const MyProperties = () => {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-3 mt-5">
+             <Link 
+              to={`/view-details/${myProperty._id}`}
+                      state={{ property: myProperty }}>
+                        {" "}
               <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
                 View Details
               </button>
+
+
+             </Link>
+
+             <Link to={`/update-property/${myProperty._id}`}>
               <button className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition">
                 Update
               </button>
-              <button className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition">
+             </Link>
+              <button  onClick={() => handleDeleteProperty(myProperty._id)}
+                      
+               className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition">
                 Delete
               </button>
             </div>

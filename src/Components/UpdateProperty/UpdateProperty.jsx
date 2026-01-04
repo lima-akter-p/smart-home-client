@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router";
 import { AuthContex } from "../Provider/AuthContext";
 import { toast } from "react-toastify";
+import Loading from "../../Pages/Loading/Loading";
+
 
 const UpdateProperty = () => {
   const { user, userLoding } = useContext(AuthContex);
@@ -10,14 +12,14 @@ const UpdateProperty = () => {
   const navigate = useNavigate();
   const[loading,setLoading] = useState(true)
   useEffect(() => {
-    fetch(`http://localhost:3000/properties/${id}`)
+    fetch(`https://smart-home-api-server.vercel.app/properties/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProperty(data);
         setLoading(false)
       });
   }, [id]);
-  if (userLoding  || loading) return <span>loading....</span>
+  if (userLoding  || loading) return <Loading></Loading>
 
   const handleAddUpdate = (e) => {
     setLoading(true)
@@ -32,7 +34,7 @@ const UpdateProperty = () => {
       location: form.location.value,
       image: form.image.value,
     };
-    fetch(`http://localhost:3000/updateProperties/${id}`, {
+    fetch(`https://smart-home-api-server.vercel.app/updateProperties/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

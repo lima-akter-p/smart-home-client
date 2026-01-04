@@ -8,7 +8,7 @@ const AllProperties = () => {
   const[sort,setSort] = useState("createdAt-asc")
  
   useEffect(() => {
-    fetch(`http://localhost:3000/properties?sortBy=${sort}`)
+    fetch(`https://smart-home-api-server.vercel.app/properties?sortBy=${sort}`)
       .then((res) => res.json())
       .then((data) => {
         setProperties(data);
@@ -67,7 +67,7 @@ const AllProperties = () => {
           <option value="price-desc">price high to low</option>
           <option value="price-asc">price low to high</option>
           <option value="createdAt-desc">recent property</option>
-          <option value="createdAt-ase">old property</option>
+          <option value="createdAt-asc">old property</option>
         </select>
       </div>
 

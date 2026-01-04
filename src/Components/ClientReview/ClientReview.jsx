@@ -65,7 +65,7 @@ const reviews = [
 
 export default function ClientReview() {
   return (
-    <section className="px-6 py-14 bg-gray-100">
+    <section className="px-6 py-14 mt-25 bg-gray-200">
       <h2 className="text-3xl font-bold text-center mb-10">
         What Our Clients Say
       </h2>

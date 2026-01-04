@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaFacebook,  FaLinkedin,  } from "react-icons/fa";
+import { IoLogoGithub } from "react-icons/io";
 import logo from '../../assets/logo.png'
 
 const Footer = () => {
@@ -57,13 +58,12 @@ const Footer = () => {
                         <a href="https://www.facebook.com/lima.akther.284949" className="hover:text-white transition-colors">
                             <FaFacebook />
                         </a>
-                        <a href="#" className="hover:text-white transition-colors">
-                            <FaInstagram />
+                       
+                        
+                        <a href="https://github.com/lima-akter-p" className="hover:text-white transition-colors">
+                            <IoLogoGithub />
                         </a>
-                        <a href="#" className="hover:text-white transition-colors">
-                            <FaTwitter />
-                        </a>
-                        <a href="#" className="hover:text-white transition-colors">
+                        <a href="https://www.linkedin.com/in/limaakter04" className="hover:text-white transition-colors">
                             <FaLinkedin />
                         </a>
                     </div>

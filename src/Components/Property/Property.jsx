@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
+import { ImLocation } from "react-icons/im";
 
 const Property = ({ property }) => {
   const { propertyName, category, description, location, price, image ,_id} =
@@ -26,13 +27,14 @@ const Property = ({ property }) => {
 
         <p className="text-gray-600 text-sm mb-3">{description}</p>
 
-        <p className="text-gray-700 font-medium mb-2">📍 {location}</p>
+        <p className="text-gray-700 font-medium mb-2"><ImLocation /> {location}</p>
 
-        <p className="text-xl font-bold text-green-600 mb-4">{price}</p>
+        <p className="text-xl font-bold text-green-600 mb-4">{price}৳</p>
 
         <Link to={`/view-details/${_id}`}>
           {" "}
-          <button className="w-full bg-violet-900 text-white py-2 rounded-lg hover:bg-gray-700 transition-all">
+          <button className="w-full bg-linear-to-r from-blue-500 to-violet-500 hover:from-violet-500 hover:to-blue-500
+           text-black py-2 rounded-lg hover:bg-gray-700 transition-all">
             View Details
           </button>
         </Link>

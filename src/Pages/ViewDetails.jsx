@@ -1,8 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import {  useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { AuthContex } from "../Components/Provider/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
+import Loading from "../Components/Loading/Loading";
+import { FaLocationDot } from "react-icons/fa6";
+
 
 const ViewDetails = () => {
   const { user } = useContext(AuthContex);
@@ -11,13 +14,15 @@ const ViewDetails = () => {
   const [property, setProperty] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/properties/${id}`).then((res) => {
-      setProperty(res.data);
-      setLoading(false);
-    });
+    axios
+      .get(`https://smart-home-api-server.vercel.app/properties/${id}`)
+      .then((res) => {
+        setProperty(res.data);
+        setLoading(false);
+      });
   }, [id]);
 
-  if (loading) return <span>loading....</span>;
+  if (loading) return <Loading></Loading>;
 
   const handleAddRating = (e) => {
     setLoading(true);
@@ -34,18 +39,21 @@ const ViewDetails = () => {
       userEmail: user?.email,
     };
 
-   
-
-    axios.post("http://localhost:3000/RatingProperty", newRating).then((res) => {
-      setLoading(false);
-      if (res.data.insertedId) {
-        Swal.fire({
-          title: "Insert success!",
-          icon: "success",
-          draggable: true,
-        });
-      }
-    });
+    axios
+      .post(
+        "https://smart-home-api-server.vercel.app/RatingProperty",
+        newRating
+      )
+      .then((res) => {
+        setLoading(false);
+        if (res.data.insertedId) {
+          Swal.fire({
+            title: "Insert success!",
+            icon: "success",
+            draggable: true,
+          });
+        }
+      });
     form.reset();
   };
 
@@ -67,7 +75,7 @@ const ViewDetails = () => {
         </div>
 
         {/* Content Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className=" bg-white p-3 grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Left Column */}
           <div className=" md:col-span-2 space-y-6">
             {/* Price + Category */}
@@ -91,13 +99,76 @@ const ViewDetails = () => {
               </p>
             </div>
 
+            {/* Property Information */}
+            <div className="p-4 rounded-xl border">
+              <h2 className="text-xl font-semibold mb-4">
+                Property Information
+              </h2>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-gray-700">
+                <p>
+                  🏢 Property ID: <span className="font-semibold">#A1025</span>
+                </p>
+                <p>
+                  📌 Type: <span className="font-semibold">Apartment</span>
+                </p>
+                <p>
+                  📏 Area: <span className="font-semibold">1650 Sqft</span>
+                </p>
+                <p>
+                  🛏 Bedrooms: <span className="font-semibold">3</span>
+                </p>
+                <p>
+                  🛁 Bathrooms: <span className="font-semibold">3</span>
+                </p>
+                <p>
+                  🛋 Furnishing:{" "}
+                  <span className="font-semibold">Semi-Furnished</span>
+                </p>
+                <p>
+                  🧭 Facing: <span className="font-semibold">South</span>
+                </p>
+                <p>
+                  🏗 Year Built: <span className="font-semibold">2022</span>
+                </p>
+                <p>
+                  🚪 Floor: <span className="font-semibold">8th</span>
+                </p>
+              </div>
+            </div>
+            {/* Amenities */}
+            <div className="p-4 rounded-xl border">
+              <h2 className="text-xl font-semibold mb-4">Amenities</h2>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-gray-700">
+                <p>✔ Lift</p>
+                <p>✔ Parking</p>
+                <p>✔ CCTV Security</p>
+                <p>✔ Generator Backup</p>
+                <p>✔ Roof Access</p>
+                <p>✔ Children Play Area</p>
+              </div>
+            </div>
+
             {/* Location */}
             <div>
               <h2 className="text-xl font-semibold text-gray-900 mb-2">
                 Location
               </h2>
-              <p className="text-gray-700 text-lg">📍 {property.location}</p>
+              <p className="text-gray-700 text-lg"><FaLocationDot/> {property.location}</p>
             </div>
+          </div>
+          {/* Contact Info — buttons removed */}
+          <div className="border p-4 rounded-xl shadow-sm space-y-2">
+            <h2 className="text-xl font-semibold">Contact Information</h2>
+
+            <p>
+              📱 Phone: <span className="font-semibold">017xxxxxxxx</span>
+            </p>
+            <p>
+              📧 Email:{" "}
+              <span className="font-semibold">lima042176@gmail.com</span>
+            </p>
           </div>
 
           {/* Right Column – Sidebar */}
@@ -125,14 +196,14 @@ const ViewDetails = () => {
       {/* review and rating */}
 
       <section>
-        <div className="flex justify-center py-10 px-4">
-          <div className="w-full max-w-3xl  shadow-xl rounded-xl p-8">
-            <button className="text-sm text-gray-500 mb-3 hover:underline">
+        <div className="  flex justify-center py-10 px-4">
+          <div className="  w-full max-w-3xl  shadow-xl rounded-xl p-8">
+            <Link to="/all-properties" className="text-sm text-gray-500 mb-3 hover:underline">
               ← Back to Properties
-            </button>
+            </Link>
 
             <h2 className="text-3xl font-bold text-center mb-8">
-              Review <span className="text-violet-600">And Rating</span>
+              Review <span className="text-violet-600">And </span>Rating
             </h2>
 
             <form onSubmit={handleAddRating} className="space-y-5">

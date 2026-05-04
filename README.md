@@ -3,7 +3,9 @@
 
 🚀 Project Overview
 
-HomeNest connects property owners with buyers and renters through a simple and user-friendly interface.
+HomeNest is a modern real estate web application designed to seamlessly connect property owners with potential buyers and renters through a simple, intuitive, and user-friendly interface. The platform aims to simplify the entire property discovery and listing process, making it efficient, transparent, and accessible for everyone.
+
+At its core, HomeNest serves as a bridge between property owners and users by providing a centralized system where properties can be listed, explored, and evaluated with ease.
 
 The platform allows:
 
@@ -60,28 +62,25 @@ dotenv
 🧭 How to Run the Project Locally
 
 
-1️⃣ Clone the repository
+## Clone the repository
 ```bash
 (https://github.com/lima-akter-p/smart-home-client.git)
 ```
 
 
-2️⃣ Go to the project folder
+## Go to the project folder
 
 
-3️⃣ Install dependencies
+## Install dependencies
   npm install
 
-4️⃣ Create a .env file
-- VITE_API_KEY=
-- DATABASE_URL=
-- JWT_SECRET=
 
-5️⃣ Start development server
+
+## Start development server
 npm run dev
 
 
-👉 Open in browser:
+
 
 
 

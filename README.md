@@ -62,7 +62,7 @@ dotenv
 
 1️⃣ Clone the repository
 ```bash
-https://github.com/somrat350/Dash-Chat
+(https://github.com/lima-akter-p/smart-home-client.git)
 ```
 
 

@@ -52,7 +52,6 @@ axios,
 tailwindcss,
 firebase,
 express,
-mongoose,
 dotenv
 
 
@@ -62,6 +61,9 @@ dotenv
 
 
 1️⃣ Clone the repository
+```bash
+https://github.com/somrat350/Dash-Chat
+```
 
 
 2️⃣ Go to the project folder
